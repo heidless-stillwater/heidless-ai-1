@@ -41,3 +41,11 @@ export const ChatInputSchema = z.object({
   history: z.array(ChatMessageSchema),
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
+
+export const ContentGeneratorInputSchema = z.object({
+  topic: z.string().min(3, "Topic must be at least 3 characters.").describe('The main subject of the content.'),
+  contentType: z.enum(['Blog Post', 'Social Media Post', 'Marketing Email', 'Product Description']).describe('The desired format of the content.'),
+  tone: z.enum(['Professional', 'Casual', 'Witty', 'Persuasive', 'Informative']).describe('The desired tone of voice for the content.'),
+  targetAudience: z.string().min(3, "Target audience must be at least 3 characters.").describe('The intended audience for the content.'),
+});
+export type ContentGeneratorInput = z.infer<typeof ContentGeneratorInputSchema>;

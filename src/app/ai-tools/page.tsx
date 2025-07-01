@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BriefGeneratorForm } from './brief-generator-form';
 import { ExpertiseGeneratorForm } from './expertise-generator-form';
 import { ChatForm } from './chat-form';
+import { ContentGeneratorForm } from './content-generator-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -42,8 +43,7 @@ export default function AIToolsPage() {
           <ExpertiseGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[3]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[3]}</h2>
-          <p>Content for {tabs[3]}</p>
+          <ContentGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[4]} className="mt-0">
           <h2 className="text-2xl font-bold mb-4">{tabs[4]}</h2>
