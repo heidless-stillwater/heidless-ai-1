@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
-import { UniversalAccess, AlertTriangle, Info, CheckCircle } from 'lucide-react';
+import { Accessibility, AlertTriangle, Info, CheckCircle } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -66,7 +66,7 @@ export function AccessibilityCheckerForm() {
                 )}
               />
               <Button type="submit" className="w-full" disabled={isPending}>
-                <UniversalAccess className="mr-2" />
+                <Accessibility className="mr-2" />
                 {isPending ? 'Analyzing...' : 'Check Accessibility'}
               </Button>
             </form>
@@ -81,7 +81,7 @@ export function AccessibilityCheckerForm() {
         {!isPending && !result && (
           <Card className="flex items-center justify-center h-full border-dashed min-h-[400px]">
             <div className="text-center text-muted-foreground p-8">
-              <UniversalAccess className="mx-auto h-12 w-12 mb-4" />
+              <Accessibility className="mx-auto h-12 w-12 mb-4" />
               <p>Your accessibility report will appear here.</p>
             </div>
           </Card>
