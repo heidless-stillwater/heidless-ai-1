@@ -10,6 +10,7 @@ import { ColorPaletteGeneratorForm } from './color-palette-generator-form';
 import { SeoOptimizerForm } from './seo-optimizer-form';
 import { LayoutSuggestionForm } from './layout-suggestion-form';
 import { CompetitorAnalysisForm } from './competitor-analysis-form';
+import { ImageOptimizerForm } from './image-optimizer-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -66,8 +67,7 @@ export default function AIToolsPage() {
           <p>Content for {tabs[8]}</p>
         </TabsContent>
         <TabsContent value={tabs[9]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[9]}</h2>
-          <p>Content for {tabs[9]}</p>
+          <ImageOptimizerForm />
         </TabsContent>
         <TabsContent value={tabs[10]} className="mt-0">
           <h2 className="text-2xl font-bold mb-4">{tabs[10]}</h2>

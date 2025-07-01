@@ -8,3 +8,4 @@ import './flows/color-palette-generator';
 import './flows/seo-optimizer';
 import './flows/layout-suggestion-generator';
 import './flows/competitor-analysis-generator';
+import './flows/image-optimizer';

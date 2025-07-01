@@ -71,3 +71,9 @@ export const CompetitorAnalysisInputSchema = z.object({
   industry: z.string().min(3, "Industry must be at least 3 characters.").describe("The industry the competitor operates in (e.g., 'e-commerce', 'SaaS', 'fashion')."),
 });
 export type CompetitorAnalysisInput = z.infer<typeof CompetitorAnalysisInputSchema>;
+
+export const ImageOptimizerInputSchema = z.object({
+  imageDataUri: z.string().describe("A data URI of the image to be optimized. Expected format: 'data:<mimetype>;base64,<encoded_data>'."),
+  filename: z.string().describe("The original filename of the image."),
+});
+export type ImageOptimizerInput = z.infer<typeof ImageOptimizerInputSchema>;
