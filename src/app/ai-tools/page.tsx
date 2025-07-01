@@ -7,6 +7,7 @@ import { ExpertiseGeneratorForm } from './expertise-generator-form';
 import { ChatForm } from './chat-form';
 import { ContentGeneratorForm } from './content-generator-form';
 import { ColorPaletteGeneratorForm } from './color-palette-generator-form';
+import { SeoOptimizerForm } from './seo-optimizer-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -50,8 +51,7 @@ export default function AIToolsPage() {
           <ColorPaletteGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[5]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[5]}</h2>
-          <p>Content for {tabs[5]}</p>
+          <SeoOptimizerForm />
         </TabsContent>
         <TabsContent value={tabs[6]} className="mt-0">
           <h2 className="text-2xl font-bold mb-4">{tabs[6]}</h2>

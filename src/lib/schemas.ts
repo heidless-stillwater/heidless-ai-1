@@ -54,3 +54,8 @@ export const ColorPaletteInputSchema = z.object({
   description: z.string().min(10, "Description must be at least 10 characters.").describe('A description of the desired theme or mood for the color palette (e.g., "A calming, minimalist theme for a yoga studio").'),
 });
 export type ColorPaletteInput = z.infer<typeof ColorPaletteInputSchema>;
+
+export const SeoOptimizerInputSchema = z.object({
+  pageContent: z.string().min(50, "Page content must be at least 50 characters.").describe('The full HTML content of a web page.'),
+});
+export type SeoOptimizerInput = z.infer<typeof SeoOptimizerInputSchema>;

@@ -4,3 +4,4 @@ import './flows/expertise-generator';
 import './flows/chat-flow';
 import './flows/content-generator';
 import './flows/color-palette-generator';
+import './flows/seo-optimizer';
