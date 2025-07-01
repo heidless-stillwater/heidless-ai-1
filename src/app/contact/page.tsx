@@ -42,7 +42,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-        <div className="space-y-8">
+        <div>
           <GoogleMap address="703a Seven Sisters Road" />
         </div>
         <div className="md:col-span-2">
