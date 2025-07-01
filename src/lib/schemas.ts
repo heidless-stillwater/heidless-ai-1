@@ -30,3 +30,14 @@ export const ExpertiseInputSchema = z.object({
   topic: z.string().min(10, "Your question must be at least 10 characters long.").describe('The topic or question for the AI expert to explain.'),
 });
 export type ExpertiseInput = z.infer<typeof ExpertiseInputSchema>;
+
+export const ChatMessageSchema = z.object({
+  role: z.enum(['user', 'model']),
+  content: z.string(),
+});
+export type ChatMessage = z.infer<typeof ChatMessageSchema>;
+
+export const ChatInputSchema = z.object({
+  history: z.array(ChatMessageSchema),
+});
+export type ChatInput = z.infer<typeof ChatInputSchema>;

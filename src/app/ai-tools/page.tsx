@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BriefGeneratorForm } from './brief-generator-form';
 import { ExpertiseGeneratorForm } from './expertise-generator-form';
+import { ChatForm } from './chat-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -22,7 +23,7 @@ export default function AIToolsPage() {
   ];
 
   return (
-    <Tabs defaultValue={tabs[2]} orientation="vertical" className="flex min-h-screen">
+    <Tabs defaultValue={tabs[0]} orientation="vertical" className="flex min-h-screen">
       <TabsList className="flex flex-col h-auto w-1/4 p-4 border-r bg-transparent rounded-none">
         {tabs.map((tab) => (
           <TabsTrigger key={tab} value={tab} className="w-full justify-start">
@@ -31,9 +32,8 @@ export default function AIToolsPage() {
         ))}
       </TabsList>
       <div className="w-3/4 p-4">
-        <TabsContent value={tabs[0]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[0]}</h2>
-          <p>Content for {tabs[0]}</p>
+        <TabsContent value={tabs[0]} className="mt-0 h-full">
+          <ChatForm />
         </TabsContent>
         <TabsContent value={tabs[1]} className="mt-0">
           <BriefGeneratorForm />
