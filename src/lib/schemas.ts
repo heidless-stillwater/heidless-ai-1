@@ -59,3 +59,9 @@ export const SeoOptimizerInputSchema = z.object({
   pageContent: z.string().min(50, "Page content must be at least 50 characters.").describe('The full HTML content of a web page.'),
 });
 export type SeoOptimizerInput = z.infer<typeof SeoOptimizerInputSchema>;
+
+export const LayoutSuggestionInputSchema = z.object({
+  pageDescription: z.string().min(20, "Please provide a more detailed description (at least 20 characters).").describe('A detailed description of the content and purpose of the web page.'),
+  pageType: z.enum(['Landing Page', 'Blog Post', 'Portfolio', 'Contact Page', 'About Us']).describe('The type of page for which layouts are being suggested.'),
+});
+export type LayoutSuggestionInput = z.infer<typeof LayoutSuggestionInputSchema>;
