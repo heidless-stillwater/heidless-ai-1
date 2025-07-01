@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { SignedIn, SignedOut, UserButton, SignInButton, SignUpButton } from "@clerk/nextjs";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -25,7 +26,7 @@ export function Navbar() {
         <span className="sr-only">Heidless Hub</span>
       </Link>
       <span className="ml-2 font-headline text-lg font-semibold">Heidless Hub</span>
-      <nav className="ml-auto hidden gap-4 sm:gap-6 lg:flex">
+      <nav className="ml-auto hidden items-center gap-4 sm:gap-6 lg:flex">
         {navLinks.map((link) => (
           <Link
             key={link.href}
@@ -38,6 +39,19 @@ export function Navbar() {
             {link.label}
           </Link>
         ))}
+        <div className="flex items-center gap-2">
+            <SignedOut>
+                <SignInButton mode="modal">
+                    <Button variant="ghost">Sign In</Button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                    <Button>Sign Up</Button>
+                </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+                <UserButton afterSignOutUrl="/"/>
+            </SignedIn>
+        </div>
       </nav>
       <Sheet>
         <SheetTrigger asChild>
@@ -66,6 +80,19 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
+             <div className="mt-4 grid gap-2">
+                <SignedOut>
+                    <SignInButton mode="modal">
+                        <Button variant="outline" className="w-full">Sign In</Button>
+                    </SignInButton>
+                    <SignUpButton mode="modal">
+                        <Button className="w-full">Sign Up</Button>
+                    </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton afterSignOutUrl="/" />
+                </SignedIn>
+            </div>
           </div>
         </SheetContent>
       </Sheet>

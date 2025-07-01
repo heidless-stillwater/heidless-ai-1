@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -27,19 +28,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-body antialiased",
-          inter.variable,
-          spaceGrotesk.variable
-        )}
-      >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <Toaster />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="dark">
+        <body
+          className={cn(
+            "min-h-screen bg-background font-body antialiased",
+            inter.variable,
+            spaceGrotesk.variable
+          )}
+        >
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <Toaster />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
