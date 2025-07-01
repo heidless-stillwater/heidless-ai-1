@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BriefGeneratorForm } from './brief-generator-form';
+import { ExpertiseGeneratorForm } from './expertise-generator-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -21,8 +22,8 @@ export default function AIToolsPage() {
   ];
 
   return (
-    <Tabs defaultValue={tabs[1]} orientation="vertical" className="flex min-h-screen">
-      <TabsList className="flex flex-col h-full w-1/4 p-4 border-r bg-transparent rounded-none">
+    <Tabs defaultValue={tabs[2]} orientation="vertical" className="flex min-h-screen">
+      <TabsList className="flex flex-col h-auto w-1/4 p-4 border-r bg-transparent rounded-none">
         {tabs.map((tab) => (
           <TabsTrigger key={tab} value={tab} className="w-full justify-start">
             {tab}
@@ -38,8 +39,7 @@ export default function AIToolsPage() {
           <BriefGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[2]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[2]}</h2>
-          <p>Content for {tabs[2]}</p>
+          <ExpertiseGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[3]} className="mt-0">
           <h2 className="text-2xl font-bold mb-4">{tabs[3]}</h2>

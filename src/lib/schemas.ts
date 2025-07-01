@@ -25,3 +25,8 @@ export const BriefInputSchema = z.object({
   competitors: z.string().optional().describe('Any known competitors.'),
 });
 export type BriefInput = z.infer<typeof BriefInputSchema>;
+
+export const ExpertiseInputSchema = z.object({
+  topic: z.string().min(10, "Your question must be at least 10 characters long.").describe('The topic or question for the AI expert to explain.'),
+});
+export type ExpertiseInput = z.infer<typeof ExpertiseInputSchema>;
