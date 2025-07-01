@@ -65,3 +65,9 @@ export const LayoutSuggestionInputSchema = z.object({
   pageType: z.enum(['Landing Page', 'Blog Post', 'Portfolio', 'Contact Page', 'About Us']).describe('The type of page for which layouts are being suggested.'),
 });
 export type LayoutSuggestionInput = z.infer<typeof LayoutSuggestionInputSchema>;
+
+export const CompetitorAnalysisInputSchema = z.object({
+  competitorName: z.string().min(2, "Competitor name must be at least 2 characters.").describe("The name of the competitor's company or website."),
+  industry: z.string().min(3, "Industry must be at least 3 characters.").describe("The industry the competitor operates in (e.g., 'e-commerce', 'SaaS', 'fashion')."),
+});
+export type CompetitorAnalysisInput = z.infer<typeof CompetitorAnalysisInputSchema>;

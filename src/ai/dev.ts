@@ -7,3 +7,4 @@ import './flows/content-generator';
 import './flows/color-palette-generator';
 import './flows/seo-optimizer';
 import './flows/layout-suggestion-generator';
+import './flows/competitor-analysis-generator';
