@@ -6,6 +6,7 @@ import { BriefGeneratorForm } from './brief-generator-form';
 import { ExpertiseGeneratorForm } from './expertise-generator-form';
 import { ChatForm } from './chat-form';
 import { ContentGeneratorForm } from './content-generator-form';
+import { ColorPaletteGeneratorForm } from './color-palette-generator-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -46,8 +47,7 @@ export default function AIToolsPage() {
           <ContentGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[4]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[4]}</h2>
-          <p>Content for {tabs[4]}</p>
+          <ColorPaletteGeneratorForm />
         </TabsContent>
         <TabsContent value={tabs[5]} className="mt-0">
           <h2 className="text-2xl font-bold mb-4">{tabs[5]}</h2>

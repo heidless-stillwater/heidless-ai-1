@@ -49,3 +49,8 @@ export const ContentGeneratorInputSchema = z.object({
   targetAudience: z.string().min(3, "Target audience must be at least 3 characters.").describe('The intended audience for the content.'),
 });
 export type ContentGeneratorInput = z.infer<typeof ContentGeneratorInputSchema>;
+
+export const ColorPaletteInputSchema = z.object({
+  description: z.string().min(10, "Description must be at least 10 characters.").describe('A description of the desired theme or mood for the color palette (e.g., "A calming, minimalist theme for a yoga studio").'),
+});
+export type ColorPaletteInput = z.infer<typeof ColorPaletteInputSchema>;
