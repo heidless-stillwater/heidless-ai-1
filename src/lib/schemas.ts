@@ -82,3 +82,8 @@ export const PerformanceOptimizerInputSchema = z.object({
   pageContent: z.string().min(50, "Page content must be at least 50 characters.").describe('The full HTML content of a web page to analyze for performance.'),
 });
 export type PerformanceOptimizerInput = z.infer<typeof PerformanceOptimizerInputSchema>;
+
+export const AccessibilityCheckerInputSchema = z.object({
+  pageContent: z.string().min(50, "Page content must be at least 50 characters.").describe('The full HTML content of a web page to analyze for accessibility.'),
+});
+export type AccessibilityCheckerInput = z.infer<typeof AccessibilityCheckerInputSchema>;
