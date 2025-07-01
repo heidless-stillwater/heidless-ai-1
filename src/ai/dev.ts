@@ -9,3 +9,4 @@ import './flows/seo-optimizer';
 import './flows/layout-suggestion-generator';
 import './flows/competitor-analysis-generator';
 import './flows/image-optimizer';
+import './flows/performance-optimizer';

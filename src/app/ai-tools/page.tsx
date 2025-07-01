@@ -11,6 +11,7 @@ import { SeoOptimizerForm } from './seo-optimizer-form';
 import { LayoutSuggestionForm } from './layout-suggestion-form';
 import { CompetitorAnalysisForm } from './competitor-analysis-form';
 import { ImageOptimizerForm } from './image-optimizer-form';
+import { PerformanceOptimizerForm } from './performance-optimizer-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -63,8 +64,7 @@ export default function AIToolsPage() {
           <CompetitorAnalysisForm />
         </TabsContent>
         <TabsContent value={tabs[8]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[8]}</h2>
-          <p>Content for {tabs[8]}</p>
+          <PerformanceOptimizerForm />
         </TabsContent>
         <TabsContent value={tabs[9]} className="mt-0">
           <ImageOptimizerForm />

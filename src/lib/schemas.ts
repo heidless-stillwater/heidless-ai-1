@@ -77,3 +77,8 @@ export const ImageOptimizerInputSchema = z.object({
   filename: z.string().describe("The original filename of the image."),
 });
 export type ImageOptimizerInput = z.infer<typeof ImageOptimizerInputSchema>;
+
+export const PerformanceOptimizerInputSchema = z.object({
+  pageContent: z.string().min(50, "Page content must be at least 50 characters.").describe('The full HTML content of a web page to analyze for performance.'),
+});
+export type PerformanceOptimizerInput = z.infer<typeof PerformanceOptimizerInputSchema>;
