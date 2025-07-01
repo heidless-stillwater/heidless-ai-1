@@ -18,7 +18,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 px-4 lg:px-6 h-16 flex items-center bg-background/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 px-4 lg:px-6 h-16 flex items-center bg-background/80 backdrop-blur-sm w-[95%] mx-auto">
       <Link className="flex items-center justify-center" href="/">
         <MountainIcon className="h-6 w-6" />
         <span className="sr-only">Heidless Hub</span>

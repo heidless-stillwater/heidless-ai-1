@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
+      <main className="flex-1 max-w-[95%] mx-auto">
         <section className="w-full py-20 md:py-32 lg:py-40 xl:py-48 text-center" id="hero">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-1 lg:gap-12">
