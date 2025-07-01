@@ -87,3 +87,8 @@ export const AccessibilityCheckerInputSchema = z.object({
   pageContent: z.string().min(50, "Page content must be at least 50 characters.").describe('The full HTML content of a web page to analyze for accessibility.'),
 });
 export type AccessibilityCheckerInput = z.infer<typeof AccessibilityCheckerInputSchema>;
+
+export const CodeGeneratorInputSchema = z.object({
+  prompt: z.string().min(10, "Prompt must be at least 10 characters.").describe('A detailed description of the React component to generate.'),
+});
+export type CodeGeneratorInput = z.infer<typeof CodeGeneratorInputSchema>;

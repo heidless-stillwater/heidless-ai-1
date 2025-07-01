@@ -13,6 +13,7 @@ import { CompetitorAnalysisForm } from './competitor-analysis-form';
 import { ImageOptimizerForm } from './image-optimizer-form';
 import { PerformanceOptimizerForm } from './performance-optimizer-form';
 import { AccessibilityCheckerForm } from './accessibility-checker-form';
+import { CodeGeneratorForm } from './code-generator-form';
 
 export default function AIToolsPage() {
   const tabs = [
@@ -74,8 +75,7 @@ export default function AIToolsPage() {
           <AccessibilityCheckerForm />
         </TabsContent>
         <TabsContent value={tabs[11]} className="mt-0">
-          <h2 className="text-2xl font-bold mb-4">{tabs[11]}</h2>
-          <p>Content for {tabs[11]}</p>
+          <CodeGeneratorForm />
         </TabsContent>
       </div>
     </Tabs>

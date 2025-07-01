@@ -11,3 +11,4 @@ import './flows/competitor-analysis-generator';
 import './flows/image-optimizer';
 import './flows/performance-optimizer';
 import './flows/accessibility-checker';
+import './flows/code-generator';
