@@ -3,23 +3,14 @@
  * @fileOverview A flow for generating a project brief using AI.
  *
  * - generateBrief - A function that handles the project brief generation.
- * - BriefInput - The input type for the generateBrief function.
  * - BriefOutput - The return type for the generateBrief function.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
+import { BriefInputSchema, type BriefInput } from '@/lib/schemas';
 
-export const BriefInputSchema = z.object({
-  projectName: z.string().min(3, "Project name must be at least 3 characters.").describe('The name of the project.'),
-  projectGoals: z.string().min(10, "Project goals must be at least 10 characters.").describe('The primary goals of the project.'),
-  targetAudience: z.string().min(10, "Target audience must be at least 10 characters.").describe('The target audience for the project.'),
-  keyFeatures: z.string().min(10, "Key features must be at least 10 characters.").describe('A list or description of the key features required.'),
-  competitors: z.string().optional().describe('Any known competitors.'),
-});
-export type BriefInput = z.infer<typeof BriefInputSchema>;
-
-export const BriefOutputSchema = z.object({
+const BriefOutputSchema = z.object({
   title: z.string().describe('The title of the project brief.'),
   overview: z.string().describe('A brief overview of the project.'),
   goals: z.array(z.string()).describe('A list of specific, measurable project goals.'),

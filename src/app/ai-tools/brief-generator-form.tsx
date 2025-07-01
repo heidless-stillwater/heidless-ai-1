@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { generateBrief, type BriefInput, type BriefOutput, BriefInputSchema } from '@/ai/flows/brief-generator';
+import { generateBrief, type BriefOutput } from '@/ai/flows/brief-generator';
+import { BriefInputSchema, type BriefInput } from '@/lib/schemas';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';

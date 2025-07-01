@@ -16,3 +16,12 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+export const BriefInputSchema = z.object({
+  projectName: z.string().min(3, "Project name must be at least 3 characters.").describe('The name of the project.'),
+  projectGoals: z.string().min(10, "Project goals must be at least 10 characters.").describe('The primary goals of the project.'),
+  targetAudience: z.string().min(10, "Target audience must be at least 10 characters.").describe('The target audience for the project.'),
+  keyFeatures: z.string().min(10, "Key features must be at least 10 characters.").describe('A list or description of the key features required.'),
+  competitors: z.string().optional().describe('Any known competitors.'),
+});
+export type BriefInput = z.infer<typeof BriefInputSchema>;
