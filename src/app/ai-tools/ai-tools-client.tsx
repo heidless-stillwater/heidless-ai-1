@@ -60,6 +60,7 @@ import {
 import React from "react";
 import { cn } from "@/lib/utils";
 
+const Rocket = Heart; // Placeholder
 
 const sections = [
   {
@@ -295,4 +296,3 @@ export function AiToolsClient() {
     </div>
   );
 }
-const Rocket = Heart; // Placeholder
