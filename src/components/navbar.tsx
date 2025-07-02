@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { MountainIcon, Menu } from "lucide-react";
+import { MountainIcon, Menu, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/ai-tools", label: "AI Tools", icon: Bot},
   { href: "/contact", label: "Contact" },
 ];
 
@@ -32,11 +33,12 @@ export function Navbar() {
           <Link
             key={link.href}
             className={cn(
-              "text-sm font-medium hover:text-primary transition-colors",
+              "text-sm font-medium hover:text-primary transition-colors flex items-center gap-2",
               pathname === link.href ? "text-primary" : "text-muted-foreground"
             )}
             href={link.href}
           >
+            {link.icon && <link.icon className="h-4 w-4" />}
             {link.label}
           </Link>
         ))}
@@ -73,11 +75,12 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   className={cn(
-                    "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors",
+                    "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors gap-2",
                      pathname === link.href ? "text-primary" : "text-muted-foreground"
                   )}
                   href={link.href}
                 >
+                  {link.icon && <link.icon className="h-5 w-5" />}
                   {link.label}
                 </Link>
               ))}
