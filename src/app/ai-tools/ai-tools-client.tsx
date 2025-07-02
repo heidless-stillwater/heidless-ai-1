@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useRef } from 'react';
@@ -7,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceholderTool } from '@/components/ai/placeholder';
 import { ExpenseCategorizer } from '@/components/ai/expense-categorizer';
-import { Building, UtensilsCrossed, Tooth, Dumbbell, UserCheck } from 'lucide-react';
+import { Building, UtensilsCrossed, HeartPulse, Dumbbell, UserCheck } from 'lucide-react';
 
 const webConsultancyTools = [
     'AI-powered chat', 'AI Powered Brief', 'AI Expertise', 'AI Content Generator', 'AI Color Palette Generator', 'AI SEO Optimizer', 'AI Layout Suggestions', 'AI Competitor Analysis', 'AI Performance Optimizer', 'AI Image Optimizer', 'AI Accessibility Checker', 'AI Code Generator'
@@ -124,7 +123,7 @@ export function AiToolsClient() {
                 <Card>
                     <CardHeader>
                          <div className="flex items-center gap-4">
-                            <Tooth className="w-8 h-8 text-primary" />
+                            <HeartPulse className="w-8 h-8 text-primary" />
                             <CardTitle className="text-3xl font-headline">Dental Practice</CardTitle>
                         </div>
                     </CardHeader>
