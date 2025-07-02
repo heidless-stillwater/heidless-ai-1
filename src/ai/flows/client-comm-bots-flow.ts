@@ -10,10 +10,10 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'zod';
 
-export const ClientBotInputSchema = z.string().describe('The client message to the bot.');
+const ClientBotInputSchema = z.string().describe('The client message to the bot.');
 export type ClientBotInput = z.infer<typeof ClientBotInputSchema>;
 
-export const ClientBotOutputSchema = z.string().describe('The bot\'s response to the client.');
+const ClientBotOutputSchema = z.string().describe('The bot\'s response to the client.');
 export type ClientBotOutput = z.infer<typeof ClientBotOutputSchema>;
 
 export async function generateBotResponse(input: ClientBotInput): Promise<ClientBotOutput> {
