@@ -22,11 +22,6 @@ export function Footer() {
           <Link className="text-sm hover:text-primary transition-colors" href="/pricing">
             Pricing
           </Link>
-          <SignedIn>
-            <Link className="text-sm hover:text-primary transition-colors" href="/ai-tools">
-              AI Tools
-            </Link>
-          </SignedIn>
           <Link className="text-sm hover:text-primary transition-colors" href="/contact">
             Contact
           </Link>
