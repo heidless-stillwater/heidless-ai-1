@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { MountainIcon } from "lucide-react";
 
@@ -16,6 +17,9 @@ export function Footer() {
           </Link>
           <Link className="text-sm hover:text-primary transition-colors" href="/portfolio">
             Portfolio
+          </Link>
+          <Link className="text-sm hover:text-primary transition-colors" href="/pricing">
+            Pricing
           </Link>
           <Link className="text-sm hover:text-primary transition-colors" href="/contact">
             Contact
