@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/ai-tools", label: "AI Tools" },
+  { href: "/ai-tools", label: "AI Tools", auth: true },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -28,18 +28,23 @@ export function Navbar() {
       </Link>
       <span className="ml-2 font-headline text-lg font-semibold">Heidless Hub</span>
       <nav className="ml-auto hidden items-center gap-4 sm:gap-6 lg:flex">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            className={cn(
-              "text-sm font-medium hover:text-primary transition-colors",
-              pathname === link.href ? "text-primary" : "text-muted-foreground"
-            )}
-            href={link.href}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {navLinks.map((link) => {
+          const linkComponent = (
+            <Link
+              className={cn(
+                "text-sm font-medium hover:text-primary transition-colors",
+                pathname === link.href ? "text-primary" : "text-muted-foreground"
+              )}
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          );
+          if ((link as any).auth) {
+            return <SignedIn key={link.href}>{linkComponent}</SignedIn>;
+          }
+          return <div key={link.href}>{linkComponent}</div>
+        })}
        
         <div className="flex items-center gap-2">
             <SignedOut>
@@ -69,18 +74,23 @@ export function Navbar() {
               <span className="ml-2 font-headline text-lg font-semibold">Heidless Hub</span>
             </Link>
             <nav className="grid gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  className={cn(
-                    "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors",
-                    pathname === link.href ? "text-primary" : "text-muted-foreground"
-                  )}
-                  href={link.href}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                 const linkComponent = (
+                    <Link
+                      className={cn(
+                        "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors",
+                        pathname === link.href ? "text-primary" : "text-muted-foreground"
+                      )}
+                      href={link.href}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                if ((link as any).auth) {
+                  return <SignedIn key={link.href}>{linkComponent}</SignedIn>;
+                }
+                return <div key={link.href}>{linkComponent}</div>
+              })}
             </nav>
              <div className="mt-4 grid gap-2">
                 <SignedOut>
