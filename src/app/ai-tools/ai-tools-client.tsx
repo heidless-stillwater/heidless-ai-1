@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceholderTool } from '@/components/ai/placeholder';
-import { ExpenseCategorizer } from '@/components/ai/expense-categorizer';
 import { Building, UtensilsCrossed, HeartPulse, Dumbbell, UserCheck } from 'lucide-react';
 
 const webConsultancyTools = [
@@ -48,7 +47,7 @@ export function AiToolsClient() {
             </header>
 
             <div className="flex justify-center mb-12">
-                <div className="flex flex-wrap justify-center gap-2 max-w-[calc(100%-100px)]">
+                <div className="flex flex-wrap justify-center gap-2">
                     <Button variant="outline" className="px-3" onClick={() => scrollToSection('web-consultancy')}>Web Consultancy</Button>
                     <Button variant="outline" className="px-3" onClick={() => scrollToSection('fast-food-shop')}>Fast Food Shop</Button>
                     <Button variant="outline" className="px-3" onClick={() => scrollToSection('dental-practice')}>Dental Practice</Button>
@@ -92,7 +91,7 @@ export function AiToolsClient() {
                             </TabsList>
                              {accountancyTools.map(tool => 
                                 <TabsContent key={tool} value={tool}>
-                                    {tool === 'Expense Categorization' ? <ExpenseCategorizer /> : <PlaceholderTool toolName={tool} />}
+                                    <PlaceholderTool toolName={tool} />
                                 </TabsContent>
                              )}
                         </Tabs>
@@ -110,7 +109,7 @@ export function AiToolsClient() {
                     </CardHeader>
                     <CardContent>
                         <Tabs defaultValue={fastFoodTools[0]}>
-                            <TabsList className="flex-wrap h-auto justify-start mb-[20px] max-w-[calc(100%-10px)]">
+                            <TabsList className="flex-wrap h-auto justify-start mb-[20px]">
                                 {fastFoodTools.map(tool => <TabsTrigger key={tool} value={tool}>{tool}</TabsTrigger>)}
                             </TabsList>
                             {fastFoodTools.map(tool => <TabsContent key={tool} value={tool}><PlaceholderTool toolName={tool} /></TabsContent>)}
@@ -148,7 +147,7 @@ export function AiToolsClient() {
                     </CardHeader>
                     <CardContent>
                         <Tabs defaultValue={personalTrainerTools[0]}>
-                            <TabsList className="flex-wrap h-auto justify-start mb-[10px] max-w-[calc(100%-100px)]">
+                            <TabsList className="flex-wrap h-auto justify-start mb-[10px]">
                                 {personalTrainerTools.map(tool => <TabsTrigger key={tool} value={tool}>{tool}</TabsTrigger>)}
                             </TabsList>
                             {personalTrainerTools.map(tool => <TabsContent key={tool} value={tool}><PlaceholderTool toolName={tool} /></TabsContent>)}
@@ -167,7 +166,7 @@ export function AiToolsClient() {
                     </CardHeader>
                     <CardContent>
                         <Tabs defaultValue={lifeCoachTools[0]}>
-                            <TabsList className="flex-wrap h-auto justify-start mb-[20px] max-w-[calc(100%-100px)]">
+                            <TabsList className="flex-wrap h-auto justify-start mb-[20px]">
                                 {lifeCoachTools.map(tool => <TabsTrigger key={tool} value={tool}>{tool}</TabsTrigger>)}
                             </TabsList>
                             {lifeCoachTools.map(tool => <TabsContent key={tool} value={tool}><PlaceholderTool toolName={tool} /></TabsContent>)}
