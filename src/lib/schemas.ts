@@ -31,3 +31,21 @@ export const expenseCategorizationOutputSchema = z.object({
 });
 
 export type ExpenseCategorizationOutput = z.infer<typeof expenseCategorizationOutputSchema>;
+
+export const inventoryManagementInputSchema = z.object({
+  inventoryData: z.string().min(3, { message: "Inventory data must be provided." }).describe("A string containing inventory data in CSV format (item,quantity)."),
+});
+export type InventoryManagementInput = z.infer<typeof inventoryManagementInputSchema>;
+
+const inventoryItemSchema = z.object({
+    name: z.string().describe("The name of the inventory item."),
+    currentQuantity: z.number().describe("The current quantity of the item."),
+    suggestion: z.string().describe("The suggestion for this item (e.g., reorder quantity or a promotional idea)."),
+    reasoning: z.string().describe("A brief explanation for the suggestion."),
+});
+
+export const inventoryManagementOutputSchema = z.object({
+    lowStockItems: z.array(inventoryItemSchema).describe("A list of items that are running low and need to be reordered."),
+    overstockedItems: z.array(inventoryItemSchema).describe("A list of items that are overstocked and may require promotional efforts."),
+});
+export type InventoryManagementOutput = z.infer<typeof inventoryManagementOutputSchema>;
