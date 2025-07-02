@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, LifeBuoy, BookOpen } from "lucide-react";
+import { Check, LifeBuoy, BookOpen, Rocket, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 export default function PricingPage() {
@@ -135,6 +135,52 @@ export default function PricingPage() {
                         <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />One unique AI-powered function to add value to your service.</li>
                         <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Contact form integration to capture leads.</li>
                         <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Basic SEO setup to get you started on search engines.</li>
+                    </ul>
+                </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        <Rocket className="h-8 w-8 text-primary" />
+                        <CardTitle className="font-headline text-2xl">The Pro Plan: Grow Your Digital Presence</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                    <p>
+                        Ready to expand beyond a single page? The Pro Plan is designed for growing businesses that need more space to tell their story, detail their services, and engage with their audience. With up to five pages, you can create dedicated sections for your services, portfolio, blog, or team.
+                    </p>
+                    <p>
+                        This plan builds on the solid foundation of the Brochure site, giving you more flexibility and power. The additional AI functions can be integrated to create more sophisticated tools for your visitors, further setting you apart from the competition.
+                    </p>
+                    <h4 className="font-semibold text-card-foreground pt-2">What's included?</h4>
+                    <ul className="space-y-2">
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Everything in the Brochure Plan.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Up to 5 pages for comprehensive content.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Three powerful AI functions tailored to your business needs.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Ideal for creating in-depth service pages or a project portfolio.</li>
+                    </ul>
+                </CardContent>
+            </Card>
+             <Card className="flex flex-col">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        <ShoppingCart className="h-8 w-8 text-primary" />
+                        <CardTitle className="font-headline text-2xl">The Premium Plan: Scale with E-commerce</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                    <p>
+                        The Premium Plan is our all-in-one solution for businesses ready to sell online and scale their operations. We integrate a complete e-commerce system, allowing you to manage products, accept payments, and process orders seamlessly. This is more than just a website; it's a powerful online store.
+                    </p>
+                    <p>
+                        With up to 10 pages, advanced SEO, and analytics integration, you'll have all the tools you need to understand your customers and drive growth. The included first year of our 'premium' support ensures you have priority assistance as you grow.
+                    </p>
+                    <h4 className="font-semibold text-card-foreground pt-2">What's included?</h4>
+                    <ul className="space-y-2">
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Everything in the Pro Plan.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Full e-commerce integration with secure payments.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Advanced SEO and analytics setup for data-driven decisions.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />First year of 'premium' support with priority service.</li>
                     </ul>
                 </CardContent>
             </Card>
