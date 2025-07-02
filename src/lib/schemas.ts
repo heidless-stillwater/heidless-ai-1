@@ -16,3 +16,18 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+
+export const expenseCategorizationInputSchema = z.object({
+  description: z.string().min(3, { message: "Description must be at least 3 characters." }),
+});
+
+export type ExpenseCategorizationInput = z.infer<typeof expenseCategorizationInputSchema>;
+
+export const expenseCategorizationOutputSchema = z.object({
+  category: z.string().describe("The accounting category for the expense."),
+  confidence: z.number().min(0).max(100).describe("The confidence score of the categorization, from 0 to 100."),
+  explanation: z.string().describe("A brief explanation for the chosen category."),
+});
+
+export type ExpenseCategorizationOutput = z.infer<typeof expenseCategorizationOutputSchema>;
