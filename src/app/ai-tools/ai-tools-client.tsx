@@ -60,6 +60,7 @@ import {
 import React from "react";
 import { cn } from "@/lib/utils";
 import { ClientCommunicationBot } from "./web-consultancy/client-communication-bot";
+import { MeditationGuide } from "./life-coach/meditation-guide";
 
 const Rocket = Heart; // Placeholder
 
@@ -206,7 +207,7 @@ const sections: {
       { name: "Communication Skills Enhancement", icon: MessageCircle },
       { name: "Stress Management Techniques", icon: Heart },
       { name: "Time Management & Productivity", icon: Clock },
-      { name: "Mindfulness & Meditation Guides", icon: User },
+      { name: "Mindfulness & Meditation Guides", icon: User, component: MeditationGuide },
       { name: "Resource Recommendation Engine", icon: BookOpen },
     ],
     tabStyle: "max-w-[calc(100vw-100px)] mb-5",
