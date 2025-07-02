@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
+import { Check, LifeBuoy, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 export default function PricingPage() {
@@ -110,6 +110,58 @@ export default function PricingPage() {
             </Button>
           </CardFooter>
         </Card>
+      </div>
+      
+      <div className="mt-20 space-y-12">
+        <h2 className="text-3xl font-headline font-bold tracking-tighter text-center sm:text-4xl">Plan Details</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <Card className="flex flex-col">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        <BookOpen className="h-8 w-8 text-primary" />
+                        <CardTitle className="font-headline text-2xl">The Brochure Plan: Your Digital Starting Point</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                    <p>
+                        The Brochure Plan is the perfect entry point for small businesses, freelancers, and individuals looking to establish a professional online presence. Think of it as your digital business card—a single, beautifully designed page that tells your story, showcases your services, and gives customers a way to connect with you.
+                    </p>
+                    <p>
+                        While it's a single-page site, it's packed with power. We build it on the same high-performance, mobile-first foundation as our larger sites, ensuring a fast, seamless experience for your visitors on any device. It provides an excellent, scalable foundation that can grow with your business.
+                    </p>
+                    <h4 className="font-semibold text-card-foreground pt-2">What's included?</h4>
+                    <ul className="space-y-2">
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />A custom-designed single-page website.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />One unique AI-powered function to add value to your service.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Contact form integration to capture leads.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Basic SEO setup to get you started on search engines.</li>
+                    </ul>
+                </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        <LifeBuoy className="h-8 w-8 text-primary" />
+                        <CardTitle className="font-headline text-2xl">Support & After-Care Plans</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground">
+                    <p>
+                        Launching your website is just the beginning. Our Support & After-Care plans are designed to give you peace of mind, ensuring your website remains secure, up-to-date, and performing at its best. We handle the technical details so you can focus on running your business.
+                    </p>
+                    <p>
+                        From regular backups and security scans to performance monitoring and content updates, we've got you covered. We offer different tiers of support to match your needs, whether you just need the essentials covered or require more frequent updates and priority assistance. A well-maintained website is crucial for retaining visitors and protecting your investment.
+                    </p>
+                    <h4 className="font-semibold text-card-foreground pt-2">Key services include:</h4>
+                    <ul className="space-y-2">
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Continuous security monitoring and updates.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Regular software and plugin updates.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Performance checks and optimization.</li>
+                        <li className="flex items-start"><Check className="mr-2 h-4 w-4 mt-1 flex-shrink-0 text-primary" />Dedicated support for any questions or issues.</li>
+                    </ul>
+                </CardContent>
+            </Card>
+        </div>
       </div>
     </div>
   );
