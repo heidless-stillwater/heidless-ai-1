@@ -16,3 +16,18 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+// Schema for Expense Categorization AI Tool
+export const expenseCategorizationInputSchema = z.object({
+  description: z.string().min(3, "Please enter a more detailed description."),
+  amount: z.number().positive("Please enter a positive amount."),
+});
+
+export type ExpenseCategorizationInput = z.infer<typeof expenseCategorizationInputSchema>;
+
+export const expenseCategorizationOutputSchema = z.object({
+  category: z.string().describe("The suggested expense category."),
+  reasoning: z.string().describe("The reasoning behind the suggested category."),
+});
+
+export type ExpenseCategorizationOutput = z.infer<typeof expenseCategorizationOutputSchema>;
