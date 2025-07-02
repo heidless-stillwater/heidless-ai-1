@@ -4,3 +4,4 @@ import './flows/expense-categorization-flow';
 import './flows/financial-report-flow';
 import './flows/client-q-and-a-flow';
 import './flows/recommendations-flow';
+import './flows/special-recommender-flow';

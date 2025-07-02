@@ -79,3 +79,20 @@ export const mealRecommendationOutputSchema = z.object({
     ingredients: z.string().describe("A comma-separated list of the main ingredients in the meal."),
 });
 export type MealRecommendationOutput = z.infer<typeof mealRecommendationOutputSchema>;
+
+// Schema for Special Recommendations AI
+export const specialMealRecommendationInputSchema = z.object({
+  occasion: z.string().min(1, { message: "Please select an occasion." }),
+  flavorProfile: z.string().min(1, { message: "Please select a flavor." }),
+  dietaryNeeds: z.array(z.string()).optional(),
+  notes: z.string().optional(),
+});
+export type SpecialMealRecommendationInput = z.infer<typeof specialMealRecommendationInputSchema>;
+
+export const specialMealRecommendationOutputSchema = z.object({
+    mealName: z.string().describe("An exclusive, off-menu name for the recommended special meal."),
+    description: z.string().describe("A compelling, premium description of the special meal, highlighting what makes it unique."),
+    ingredients: z.string().describe("A comma-separated list of the main, perhaps premium, ingredients in the special meal."),
+    reason: z.string().describe("A short reason why this special was created for the customer.")
+});
+export type SpecialMealRecommendationOutput = z.infer<typeof specialMealRecommendationOutputSchema>;

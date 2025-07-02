@@ -5,6 +5,7 @@ import { ExpenseCategorization } from "./accountancy/expense-categorization";
 import { FinancialReports } from "./accountancy/financial-reports";
 import { ClientQA } from "./accountancy/client-qa";
 import { RecommendationsAI } from "./fast-food/recommendations-ai";
+import { SpecialRecommender } from "./fast-food/special-recommender";
 
 // A simple component to render a placeholder for tools that are not yet built.
 function PlaceholderTool({ toolName }: { toolName: string }) {
@@ -33,6 +34,8 @@ export function ToolContent({ toolName }: { toolName: string }) {
             return <ClientQA />;
         case 'Recommendatons AI':
             return <RecommendationsAI />;
+        case 'Special Recommender':
+            return <SpecialRecommender />;
         default:
             return <PlaceholderTool toolName={toolName} />;
     }
