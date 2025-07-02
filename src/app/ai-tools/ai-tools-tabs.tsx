@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ChatInterface } from "./chat/chat-interface";
 
 export interface AITool {
   id: string;
@@ -64,7 +65,7 @@ export function AiToolsTabs({ tools, defaultValue }: AiToolsTabsProps) {
     <Tabs defaultValue={defaultValue} className="w-full">
       <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {tools.map((tool) => (
-          <TabsTrigger key={tool.id} value={tool.id}>
+          <TabsTrigger key={tool.id} value={tool.id} disabled={tool.comingSoon}>
             <AIToolIcon name={tool.icon} className="mr-2 h-4 w-4" />
             {tool.name}
           </TabsTrigger>
@@ -84,11 +85,15 @@ export function AiToolsTabs({ tools, defaultValue }: AiToolsTabsProps) {
               <CardDescription>{tool.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex h-64 items-center justify-center rounded-lg border-2 border-dashed bg-muted">
-                <p className="text-muted-foreground">
-                  [AI Tool Interface for {tool.name} will be here]
-                </p>
-              </div>
+              {tool.id === 'chat' ? (
+                <ChatInterface />
+              ) : (
+                <div className="flex h-64 items-center justify-center rounded-lg border-2 border-dashed bg-muted">
+                  <p className="text-muted-foreground">
+                    [AI Tool Interface for {tool.name} will be here]
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </TabsContent>
