@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Layers, Megaphone, PenTool, ShoppingCart, TrendingUp } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 
 const serviceData = [
   {
@@ -29,15 +28,25 @@ const serviceData = [
   }
 ];
 
-const serviceIcons: Record<string, LucideIcon> = {
-  "Web Design & Development": PenTool,
-  "Branding & Identity": Layers,
-  "SEO & Content Strategy": TrendingUp,
-  "E-commerce Solutions": ShoppingCart,
-  "Headless CMS Integration": Code,
-  "Digital Marketing": Megaphone,
-};
-
+// Helper component to render the correct icon
+function ServiceIcon({ title }: { title: string }) {
+  switch (title) {
+    case "Web Design & Development":
+      return <PenTool className="h-6 w-6 text-primary" />;
+    case "Branding & Identity":
+      return <Layers className="h-6 w-6 text-primary" />;
+    case "SEO & Content Strategy":
+      return <TrendingUp className="h-6 w-6 text-primary" />;
+    case "E-commerce Solutions":
+      return <ShoppingCart className="h-6 w-6 text-primary" />;
+    case "Headless CMS Integration":
+      return <Code className="h-6 w-6 text-primary" />;
+    case "Digital Marketing":
+      return <Megaphone className="h-6 w-6 text-primary" />;
+    default:
+      return null;
+  }
+}
 
 export default function ServicesPage() {
   return (
@@ -51,13 +60,11 @@ export default function ServicesPage() {
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {serviceData.map((service) => {
-          const Icon = serviceIcons[service.title];
-          return (
+        {serviceData.map((service) => (
             <Card key={service.title} className="flex flex-col hover:border-primary transition-colors">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="bg-primary/10 p-3 rounded-md">
-                  {Icon && <Icon className="h-6 w-6 text-primary" />}
+                  <ServiceIcon title={service.title} />
                 </div>
                 <CardTitle className="font-headline">{service.title}</CardTitle>
               </CardHeader>
@@ -65,8 +72,7 @@ export default function ServicesPage() {
                 <CardDescription>{service.description}</CardDescription>
               </CardContent>
             </Card>
-          );
-        })}
+          ))}
       </div>
     </div>
   );
