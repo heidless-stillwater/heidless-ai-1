@@ -12,9 +12,6 @@ export function Footer() {
         </div>
         <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Heidless Hub. All rights reserved.</p>
         <nav className="flex gap-4 sm:gap-6">
-          <Link className="text-sm hover:text-primary transition-colors" href="/ai-tools">
-            AI Tools
-          </Link>
           <Link className="text-sm hover:text-primary transition-colors" href="/services">
             Services
           </Link>

@@ -11,7 +11,6 @@ import { SignedIn, SignedOut, UserButton, SignInButton, SignUpButton } from "@cl
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/ai-tools", label: "AI Tools" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
