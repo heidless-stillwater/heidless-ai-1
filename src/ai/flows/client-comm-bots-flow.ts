@@ -10,14 +10,16 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'zod';
 
-const ClientBotInputSchema = z.string().describe('The client message to the bot.');
+const ClientBotInputSchema = z.object({
+  message: z.string().describe('The client message to the bot.'),
+});
 export type ClientBotInput = z.infer<typeof ClientBotInputSchema>;
 
 const ClientBotOutputSchema = z.string().describe('The bot\'s response to the client.');
 export type ClientBotOutput = z.infer<typeof ClientBotOutputSchema>;
 
-export async function generateBotResponse(input: ClientBotInput): Promise<ClientBotOutput> {
-  return clientCommBotFlow(input);
+export async function generateBotResponse(message: string): Promise<ClientBotOutput> {
+  return clientCommBotFlow({ message });
 }
 
 const prompt = ai.definePrompt({
@@ -38,7 +40,7 @@ Here is some information about Heidless Hub:
 
 Based on the client's message below, provide a helpful and concise response. Keep your answers brief and to the point. Encourage them to visit the relevant pages (services, pricing, contact) for more details.
 
-Client message: {{{prompt}}}`,
+Client message: {{{message}}}`,
 });
 
 const clientCommBotFlow = ai.defineFlow(
