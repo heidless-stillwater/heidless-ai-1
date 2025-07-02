@@ -2,12 +2,12 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  generateRecipeVariants,
-  type RecipeVariantInput,
-  type RecipeVariantOutput,
-} from "@/ai/flows/recipe-variant-flow";
-import { RecipeVariantInputSchema } from "@/ai/flows/recipe-variant-flow";
+import { generateRecipeVariants } from "@/ai/flows/recipe-variant-flow";
+import { 
+  RecipeVariantInputSchema, 
+  type RecipeVariantInput, 
+  type RecipeVariantOutput 
+} from "@/lib/schemas";
 import React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
