@@ -14,39 +14,39 @@ export default function ContactPage() {
         </p>
       </div>
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div>
+          <ContactForm />
+        </div>
         <div className="space-y-8">
-          <h2 className="text-2xl font-headline font-bold">Our Information</h2>
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <Mail className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <a href="mailto:hello@heidlesshub.dev" className="text-muted-foreground hover:text-primary">
-                  hello@heidlesshub.dev
-                </a>
+          <div>
+            <h2 className="text-2xl font-headline font-bold mb-4">Our Information</h2>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <Mail className="h-6 w-6 text-primary" />
+                <div>
+                  <h3 className="font-semibold">Email</h3>
+                  <a href="mailto:hello@heidlesshub.dev" className="text-muted-foreground hover:text-primary">
+                    hello@heidlesshub.dev
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Phone className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <p className="text-muted-foreground">0123 456 7890</p>
+              <div className="flex items-center gap-4">
+                <Phone className="h-6 w-6 text-primary" />
+                <div>
+                  <h3 className="font-semibold">Phone</h3>
+                  <p className="text-muted-foreground">0123 456 7890</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <MapPin className="h-6 w-6 text-primary" />
-              <div>
-                <h3 className="font-semibold">Office</h3>
-                <p className="text-muted-foreground">703a Seven Sisters Road</p>
+              <div className="flex items-center gap-4">
+                <MapPin className="h-6 w-6 text-primary" />
+                <div>
+                  <h3 className="font-semibold">Office</h3>
+                  <p className="text-muted-foreground">703a Seven Sisters Road</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
           <GoogleMap address="703a Seven Sisters Road" />
-        </div>
-        <div className="md:col-span-2">
-          <ContactForm />
         </div>
       </div>
     </div>
