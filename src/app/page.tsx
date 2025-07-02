@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, PenTool, TrendingUp, ArrowRight, Check } from "lucide-react";
+import { Code, PenTool, TrendingUp, ArrowRight, Check, Bot } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 
 
 export default function Home() {
@@ -142,7 +143,40 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="ai-tools-cta" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">AI-Powered</div>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Explore Our AI Tools</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                   We offer a broad range of AI Tools specific to your Business & personal requirements.
+                   Explore interactive demos tailored to different professions.
+                </p>
+              </div>
+              <SignedIn>
+                <Button asChild size="lg" className="group">
+                  <Link href="/ai-tools">
+                    <Bot className="mr-2" /> Explore AI Tools <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </SignedIn>
+              <SignedOut>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <SignInButton mode="modal" afterSignInUrl="/ai-tools">
+                    <Button size="lg">Sign In to Explore</Button>
+                  </SignInButton>
+                  <SignUpButton mode="modal" afterSignUpUrl="/ai-tools">
+                    <Button size="lg" variant="outline">Sign Up</Button>
+                  </SignUpButton>
+                </div>
+                <p className="text-xs text-muted-foreground">Sign in to access the interactive tools.</p>
+              </SignedOut>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -250,8 +284,7 @@ export default function Home() {
           </div>
         </section>
 
-
-        <section id="contact-cta" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+        <section id="contact-cta" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">Ready to start your project?</h2>

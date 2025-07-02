@@ -11,7 +11,7 @@ export function Footer() {
           <span className="text-lg font-semibold font-headline">Heidless Hub</span>
         </div>
         <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Heidless Hub. All rights reserved.</p>
-        <nav className="flex gap-4 sm:gap-6">
+        <nav className="flex gap-4 sm:gap-6 flex-wrap justify-center">
           <Link className="text-sm hover:text-primary transition-colors" href="/services">
             Services
           </Link>
@@ -20,6 +20,9 @@ export function Footer() {
           </Link>
           <Link className="text-sm hover:text-primary transition-colors" href="/pricing">
             Pricing
+          </Link>
+           <Link className="text-sm hover:text-primary transition-colors" href="/ai-tools">
+            AI Tools
           </Link>
           <Link className="text-sm hover:text-primary transition-colors" href="/contact">
             Contact
