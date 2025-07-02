@@ -3,6 +3,7 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExpenseCategorization } from './accountancy/expense-categorization';
+import { RecommendationsAI } from './fast-food/recommendations-ai';
 
 // Other component imports will be added here as they are built.
 
@@ -21,6 +22,7 @@ type ToolContentProps = {
 // Map component names to actual components
 const componentMap: { [key: string]: React.ComponentType } = {
   ExpenseCategorization: ExpenseCategorization,
+  RecommendationsAI: RecommendationsAI,
   // Add other components here as they are built, e.g.,
   // FinancialReports: FinancialReports,
   // ClientQA: ClientQA,

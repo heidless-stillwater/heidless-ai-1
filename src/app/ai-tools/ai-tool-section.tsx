@@ -46,7 +46,7 @@ const sections = [
     id: 'fast-food-shop', 
     name: 'Fast Food Shop', 
     tools: [
-      { id: 'recommendations-ai', name: 'Recommendatons AI' },
+      { id: 'recommendations-ai', name: 'Recommendatons AI', component: 'RecommendationsAI' },
       { id: 'special-recommender-ai', name: 'Special Recommender AI' },
       { id: 'menu-optimizer-ai', name: 'Menu Optimizer AI' },
       { id: '24-7-customer-chatbot-ai', name: '24/7 Customer Chatbot AI' },

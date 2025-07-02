@@ -31,3 +31,20 @@ export const expenseCategorizationOutputSchema = z.object({
 });
 
 export type ExpenseCategorizationOutput = z.infer<typeof expenseCategorizationOutputSchema>;
+
+// Schemas for Fast Food Recommendations AI Tool
+export const recommendationsInputSchema = z.object({
+  occasion: z.enum(['any', 'lunch', 'dinner', 'snack']).default('any'),
+  flavorProfile: z.enum(['any', 'spicy', 'savory', 'sweet', 'light']).default('any'),
+  dietaryRestrictions: z.array(z.string()).default([]),
+});
+
+export type RecommendationsInput = z.infer<typeof recommendationsInputSchema>;
+
+export const recommendationsOutputSchema = z.object({
+  mealName: z.string().describe("The name of the recommended meal."),
+  description: z.string().describe("A brief, enticing description of the meal."),
+  reasoning: z.string().describe("The reasoning for why this meal was recommended based on the user's preferences."),
+});
+
+export type RecommendationsOutput = z.infer<typeof recommendationsOutputSchema>;
