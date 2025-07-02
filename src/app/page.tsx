@@ -142,42 +142,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="ai-tools-cta" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="p-4 rounded-full bg-primary/10 mb-4">
-                  <Bot className="h-10 w-10 text-primary" />
-              </div>
-              <div className="space-y-2">
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Explore AI Tools</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                 We offer a broad range of AI Tools specific to your Business & personal requirements.
-                </p>
-              </div>
-              <div className="pt-4">
-                 <SignedIn>
-                    <Button asChild size="lg" className="group">
-                      <Link href="/ai-tools">
-                        Explore AI Tools <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </Button>
-                  </SignedIn>
-                  <SignedOut>
-                    <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
-                        <SignUpButton mode="modal" afterSignInUrl="/ai-tools" afterSignUpUrl="/ai-tools">
-                          <Button size="lg">Sign Up to Explore</Button>
-                        </SignUpButton>
-                        <SignInButton mode="modal" afterSignInUrl="/ai-tools" afterSignUpUrl="/ai-tools">
-                           <Button size="lg" variant="outline">Sign In</Button>
-                        </SignInButton>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-2">Sign up to access our suite of AI-powered tools.</p>
-                  </SignedOut>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
