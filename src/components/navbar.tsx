@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { MountainIcon, Menu, Bot } from "lucide-react";
+import { MountainIcon, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
@@ -14,7 +14,6 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/tools", label: "AI Tools", icon: Bot },
   { href: "/contact", label: "Contact" },
 ];
 

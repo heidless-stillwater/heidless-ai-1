@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, PenTool, TrendingUp, ArrowRight, Check, Bot } from "lucide-react";
+import { Code, PenTool, TrendingUp, ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -141,38 +141,6 @@ export default function Home() {
               </div>
           </div>
         </section>
-
-        <section id="ai-tools-cta" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium">AI-Powered</div>
-              <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">Explore Our Suite of AI Tools</h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Discover how our custom AI solutions can streamline your business operations, from financial analysis to customer service.
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-              <SignedIn>
-                <Button asChild size="lg">
-                  <Link href="/tools">
-                    <Bot className="mr-2 h-5 w-5" /> Explore AI Tools
-                  </Link>
-                </Button>
-              </SignedIn>
-              <SignedOut>
-                <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                    <SignInButton mode="modal" afterSignInUrl="/tools">
-                        <Button variant="outline" size="lg">Sign In</Button>
-                    </SignInButton>
-                    <SignUpButton mode="modal" afterSignUpUrl="/tools">
-                        <Button size="lg">Sign Up to Explore</Button>
-                    </SignUpButton>
-                </div>
-              </SignedOut>
-            </div>
-          </div>
-        </section>
-
 
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
