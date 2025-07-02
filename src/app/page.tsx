@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, PenTool, TrendingUp, ArrowRight } from "lucide-react";
+import { Code, PenTool, TrendingUp, ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -137,6 +138,118 @@ export default function Home() {
                   <Link href="/portfolio">View Full Portfolio</Link>
                 </Button>
               </div>
+          </div>
+        </section>
+
+        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Pricing Plans</div>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Choose a plan that fits your needs</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Simple, transparent pricing to get your project off the ground.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:grid-cols-3 md:gap-12 mt-12">
+              <Card>
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="font-headline text-2xl">Standard</CardTitle>
+                  <CardDescription>Perfect for individuals and small projects.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-6">
+                  <div className="text-center">
+                    <span className="text-4xl font-bold">$49</span>
+                    <span className="text-muted-foreground">/mo</span>
+                  </div>
+                  <ul className="grid gap-3 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Custom Website (up to 5 pages)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Basic SEO Setup
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Mobile-Responsive Design
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Standard Email Support
+                    </li>
+                  </ul>
+                  <Button variant="outline" className="w-full">Choose Plan</Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary shadow-lg shadow-primary/20 relative">
+                <Badge variant="default" className="absolute -top-3 left-1/2 -translate-x-1/2">Most Popular</Badge>
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="font-headline text-2xl">Pro</CardTitle>
+                  <CardDescription>Ideal for growing businesses and startups.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-6">
+                  <div className="text-center">
+                    <span className="text-4xl font-bold">$99</span>
+                    <span className="text-muted-foreground">/mo</span>
+                  </div>
+                  <ul className="grid gap-3 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Custom Website (up to 15 pages)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Advanced SEO Optimization
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Headless CMS Integration
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Priority Phone & Email Support
+                    </li>
+                  </ul>
+                  <Button className="w-full">Choose Plan</Button>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="font-headline text-2xl">Premium</CardTitle>
+                  <CardDescription>For large-scale enterprise solutions.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-6">
+                  <div className="text-center">
+                    <span className="text-4xl font-bold">$199</span>
+                    <span className="text-muted-foreground">/mo</span>
+                  </div>
+                  <ul className="grid gap-3 text-sm text-muted-foreground">
+                     <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Unlimited Pages & Features
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Full-scale SEO & Marketing Suite
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      E-commerce & Custom Integrations
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-primary" />
+                      Dedicated Account Manager
+                    </li>
+                  </ul>
+                  <Button variant="outline" className="w-full">Choose Plan</Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
