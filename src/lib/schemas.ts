@@ -16,3 +16,11 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+export const expenseCategorizationSchema = z.object({
+  expenses: z.string().min(3, {
+    message: "Please enter at least one expense.",
+  }),
+});
+
+export type ExpenseCategorizationValues = z.infer<typeof expenseCategorizationSchema>;

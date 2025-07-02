@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
+  { href: "/ai-tools", label: "AI Tools", icon: Bot, auth: true },
 ];
 
 export function Navbar() {
@@ -28,19 +29,37 @@ export function Navbar() {
       </Link>
       <span className="ml-2 font-headline text-lg font-semibold">Heidless Hub</span>
       <nav className="ml-auto hidden items-center gap-4 sm:gap-6 lg:flex">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            className={cn(
-              "text-sm font-medium hover:text-primary transition-colors flex items-center gap-2",
-              pathname === link.href ? "text-primary" : "text-muted-foreground"
-            )}
-            href={link.href}
-          >
-            {link.icon && <link.icon className="h-4 w-4" />}
-            {link.label}
-          </Link>
-        ))}
+        {navLinks.map((link) => {
+          if (link.auth) {
+            return (
+              <SignedIn key={link.href}>
+                 <Link
+                  className={cn(
+                    "text-sm font-medium hover:text-primary transition-colors flex items-center gap-2",
+                    pathname === link.href ? "text-primary" : "text-muted-foreground"
+                  )}
+                  href={link.href}
+                >
+                  {link.icon && <link.icon className="h-4 w-4" />}
+                  {link.label}
+                </Link>
+              </SignedIn>
+            )
+          }
+          return (
+             <Link
+              key={link.href}
+              className={cn(
+                "text-sm font-medium hover:text-primary transition-colors flex items-center gap-2",
+                pathname === link.href ? "text-primary" : "text-muted-foreground"
+              )}
+              href={link.href}
+            >
+              {link.icon && <link.icon className="h-4 w-4" />}
+              {link.label}
+            </Link>
+          )
+        })}
        
         <div className="flex items-center gap-2">
             <SignedOut>
@@ -70,19 +89,37 @@ export function Navbar() {
               <span className="ml-2 font-headline text-lg font-semibold">Heidless Hub</span>
             </Link>
             <nav className="grid gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  className={cn(
-                    "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors gap-2",
-                     pathname === link.href ? "text-primary" : "text-muted-foreground"
-                  )}
-                  href={link.href}
-                >
-                  {link.icon && <link.icon className="h-5 w-5" />}
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                if (link.auth) {
+                  return (
+                    <SignedIn key={link.href}>
+                       <Link
+                        className={cn(
+                          "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors gap-2",
+                          pathname === link.href ? "text-primary" : "text-muted-foreground"
+                        )}
+                        href={link.href}
+                      >
+                        {link.icon && <link.icon className="h-5 w-5" />}
+                        {link.label}
+                      </Link>
+                    </SignedIn>
+                  )
+                }
+                return (
+                  <Link
+                    key={link.href}
+                    className={cn(
+                      "flex w-full items-center py-2 text-lg font-medium hover:text-primary transition-colors gap-2",
+                      pathname === link.href ? "text-primary" : "text-muted-foreground"
+                    )}
+                    href={link.href}
+                  >
+                    {link.icon && <link.icon className="h-5 w-5" />}
+                    {link.label}
+                  </Link>
+                )
+              })}
             </nav>
              <div className="mt-4 grid gap-2">
                 <SignedOut>
