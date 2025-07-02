@@ -250,6 +250,26 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="ai-tools-cta" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">
+                Explore Our Industry-Specific AI Tools
+              </h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                We've developed a suite of AI-powered tools to streamline operations for various businesses. Sign in to explore how we can help you.
+              </p>
+            </div>
+            <div className="mx-auto w-full max-w-sm space-y-2">
+                <Button asChild size="lg" className="group">
+                    <Link href="/ai-tools">
+                        Explore AI Tools <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                </Button>
+            </div>
+          </div>
+        </section>
+
         <section id="contact-cta" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">

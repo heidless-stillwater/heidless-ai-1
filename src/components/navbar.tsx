@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/ai-tools", label: "AI Tools" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -30,7 +31,7 @@ export function Navbar() {
       <nav className="ml-auto hidden items-center gap-4 sm:gap-6 lg:flex">
         {navLinks.map((link) => {
           // This check is a placeholder for potential future auth-only links
-          if (link.auth) {
+          if ((link as any).auth) {
             return (
               <SignedIn key={link.href}>
                  <Link
@@ -40,7 +41,7 @@ export function Navbar() {
                   )}
                   href={link.href}
                 >
-                  {link.icon && <link.icon className="h-4 w-4" />}
+                  {(link as any).icon && <(link as any).icon className="h-4 w-4" />}
                   {link.label}
                 </Link>
               </SignedIn>
@@ -55,7 +56,7 @@ export function Navbar() {
               )}
               href={link.href}
             >
-              {link.icon && <link.icon className="h-4 w-4" />}
+              {(link as any).icon && <(link as any).icon className="h-4 w-4" />}
               {link.label}
             </Link>
           )
@@ -91,7 +92,7 @@ export function Navbar() {
             <nav className="grid gap-2">
               {navLinks.map((link) => {
                  // This check is a placeholder for potential future auth-only links
-                if (link.auth) {
+                if ((link as any).auth) {
                   return (
                     <SignedIn key={link.href}>
                        <Link
@@ -101,7 +102,7 @@ export function Navbar() {
                         )}
                         href={link.href}
                       >
-                        {link.icon && <link.icon className="h-5 w-5" />}
+                        {(link as any).icon && <(link as any).icon className="h-5 w-5" />}
                         {link.label}
                       </Link>
                     </SignedIn>
@@ -116,7 +117,7 @@ export function Navbar() {
                     )}
                     href={link.href}
                   >
-                    {link.icon && <link.icon className="h-5 w-5" />}
+                    {(link as any).icon && <(link as any).icon className="h-5 w-5" />}
                     {link.label}
                   </Link>
                 )
