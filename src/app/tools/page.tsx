@@ -92,7 +92,7 @@ function ToolSection({ section }: { section: typeof toolsData[keyof typeof tools
           <TabsList className={cn(
             "relative",
             section.wrap ? "h-auto flex-wrap justify-center" : "grid w-full grid-cols-3",
-            section.maxWidth ? "max-w-[calc(100%-100px)] mx-auto" : ""
+            section.maxWidth ? "max-w-[calc(100%-50px)] mx-auto" : ""
           )}>
             {section.tools.map((tool) => (
               <TabsTrigger key={toSlug(tool)} value={toSlug(tool)}>{tool}</TabsTrigger>
