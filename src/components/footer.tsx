@@ -1,9 +1,16 @@
+"use client";
 
 import Link from "next/link";
 import { MountainIcon } from "lucide-react";
-import { SignedIn } from "@clerk/nextjs";
+import React from "react";
 
 export function Footer() {
+  const [year, setYear] = React.useState(new Date().getFullYear());
+
+  React.useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-secondary text-secondary-foreground py-6 px-4 md:px-6">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 sm:flex-row">
@@ -11,7 +18,7 @@ export function Footer() {
           <MountainIcon className="h-6 w-6" />
           <span className="text-lg font-semibold font-headline">Heidless Hub</span>
         </div>
-        <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Heidless Hub. All rights reserved.</p>
+        <p className="text-sm text-muted-foreground">&copy; {year} Heidless Hub. All rights reserved.</p>
         <nav className="flex gap-4 sm:gap-6 flex-wrap justify-center">
           <Link className="text-sm hover:text-primary transition-colors" href="/services">
             Services
