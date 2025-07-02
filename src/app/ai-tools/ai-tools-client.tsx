@@ -59,16 +59,29 @@ import {
 } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { ClientCommunicationBot } from "./web-consultancy/client-communication-bot";
 
 const Rocket = Heart; // Placeholder
 
-const sections = [
+const sections: {
+  id: string;
+  title: string;
+  icon: React.ElementType;
+  tools: {
+      name: string;
+      icon: React.ElementType;
+      component?: React.ElementType;
+  }[];
+  tabStyle: string;
+  sectionStyle: string;
+  defaultTab?: string;
+}[] = [
   {
     id: "web-consultancy",
     title: "Web Consultancy",
     icon: Briefcase,
     tools: [
-      { name: "Client Communication Bots", icon: Bot },
+      { name: "Client Communication Bots", icon: Bot, component: ClientCommunicationBot },
       { name: "Automated Code Generation", icon: FileCode },
       { name: "Bug Detection & Fixing", icon: Bug },
       { name: "Code Review Assistance", icon: FileScan },
@@ -284,11 +297,14 @@ export function AiToolsClient() {
                  </div>
               </TabsList>
               
-              {section.tools.map((tool) => (
-                <TabsContent key={tool.name} value={tool.name}>
-                  <PlaceholderContent icon={tool.icon} title={tool.name} />
-                </TabsContent>
-              ))}
+              {section.tools.map((tool) => {
+                const ToolComponent = tool.component;
+                return (
+                  <TabsContent key={tool.name} value={tool.name}>
+                    {ToolComponent ? <ToolComponent /> : <PlaceholderContent icon={tool.icon} title={tool.name} />}
+                  </TabsContent>
+                );
+              })}
             </Tabs>
           </section>
         ))}
