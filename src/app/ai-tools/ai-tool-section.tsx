@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ToolContent } from "./tool-content";
 
 interface AiToolSectionProps {
   id: string;
@@ -23,14 +23,7 @@ export function AiToolSection({ id, title, tabs, defaultTab, gap }: AiToolSectio
         </TabsList>
         {tabs.map((tab) => (
           <TabsContent key={tab} value={tab}>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{tab}</h3>
-                <p className="text-muted-foreground">
-                  Interactive component for the {tab} tool will be available here soon.
-                </p>
-              </CardContent>
-            </Card>
+            <ToolContent toolName={tab} />
           </TabsContent>
         ))}
       </Tabs>
