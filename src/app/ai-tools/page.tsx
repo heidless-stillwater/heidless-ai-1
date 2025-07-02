@@ -4,6 +4,7 @@ import { AIToolSection } from "./components/ai-tool-section";
 import { Briefcase, Utensils, Calculator, Dumbbell, BrainCircuit } from 'lucide-react';
 import { DentalIcon } from "./components/icons";
 import { ExpenseCategorization } from "./components/expense-categorization";
+import { AccountancyChatbot } from "./components/accountancy-chatbot";
 
 const sections = [
   {
@@ -48,7 +49,7 @@ const sections = [
     title: "Accountancy",
     icon: <Calculator className="h-8 w-8" />,
     tools: [
-      { name: "AI-powered chat" },
+      { name: "AI-powered chat", component: <AccountancyChatbot /> },
       { name: "Expense Categorization", component: <ExpenseCategorization /> },
     ],
   },

@@ -40,3 +40,31 @@ export const expenseCategorizationFormSchema = z.object({
     }),
 });
 export type ExpenseCategorizationFormValues = z.infer<typeof expenseCategorizationFormSchema>;
+
+// Schema for UI state
+export const chatMessageSchema = z.object({
+  role: z.enum(["user", "assistant"]),
+  content: z.string(),
+});
+
+// Schema for the chat form
+export const chatFormSchema = z.object({
+  message: z.string().min(1, { message: "Message cannot be empty." }),
+});
+export type ChatFormValues = z.infer<typeof chatFormSchema>;
+
+// Schema for the Accountancy Chat AI flow (server-side)
+export const accountancyChatInputSchema = z.object({
+  messages: z.array(
+    z.object({
+      role: z.enum(["user", "model"]),
+      content: z.string(),
+    })
+  ),
+});
+export type AccountancyChatInput = z.infer<typeof accountancyChatInputSchema>;
+
+export const accountancyChatOutputSchema = z.object({
+  response: z.string().describe("The chatbot's response."),
+});
+export type AccountancyChatOutput = z.infer<typeof accountancyChatOutputSchema>;
