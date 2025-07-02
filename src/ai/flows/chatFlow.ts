@@ -3,18 +3,10 @@
  * @fileOverview A simple chat flow.
  *
  * - chat - A function that takes a message and returns a response.
- * - ChatInput - The input type for the chat function.
- * - ChatOutput - The return type for the chat function.
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
-export const ChatInputSchema = z.string();
-export type ChatInput = z.infer<typeof ChatInputSchema>;
-
-export const ChatOutputSchema = z.string();
-export type ChatOutput = z.infer<typeof ChatOutputSchema>;
+import { type ChatInput, ChatInputSchema, type ChatOutput, ChatOutputSchema } from '@/lib/schemas';
 
 export async function chat(message: ChatInput): Promise<ChatOutput> {
   return chatFlow(message);
