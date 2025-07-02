@@ -17,10 +17,6 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const navLinksSignedIn = [
-  { href: "/ai-tools", label: "AI Tools" },
-];
-
 export function Navbar() {
   const pathname = usePathname();
 
@@ -44,23 +40,7 @@ export function Navbar() {
             {link.label}
           </Link>
         ))}
-      {navLinksSignedIn.map((link) => (
-          <SignedIn
-            key={link.href}>
-            <Link
-              key={link.href}
-              className={cn(
-                "text-sm font-medium hover:text-primary transition-colors",
-                pathname === link.href ? "text-primary" : "text-muted-foreground"
-              )}
-              href={link.href}
-            >
-              {link.label}
-            </Link>
-          </SignedIn>
-        ))}
        
-
         <div className="flex items-center gap-2">
             <SignedOut>
                 <SignInButton mode="modal">

@@ -4,7 +4,6 @@ import { Code, PenTool, TrendingUp, ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -139,33 +138,6 @@ export default function Home() {
                   <Link href="/portfolio">View Full Portfolio</Link>
                 </Button>
               </div>
-          </div>
-        </section>
-
-        <section id="explore-ai" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">Explore Our AI Toolkit</h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We offer a broad range of AI Tools specific to your Business & personal requirements.
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-                <SignedIn>
-                   <Button asChild size="lg" className="group">
-                        <Link href="/ai-tools">
-                          Explore AI Tools <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                      </Button>
-                </SignedIn>
-                <SignedOut>
-                    <SignUpButton mode="modal" afterSignUpUrl="/ai-tools" afterSignInUrl="/ai-tools">
-                        <Button size="lg" className="group">
-                            Sign Up to Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Button>
-                    </SignUpButton>
-                </SignedOut>
-            </div>
           </div>
         </section>
 
