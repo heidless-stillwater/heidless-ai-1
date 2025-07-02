@@ -141,29 +141,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="ai-tools-cta" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-               <div className="flex justify-center">
-                 <div className="bg-primary/10 p-4 rounded-full mb-4">
-                    <BrainCircuit className="h-8 w-8 text-primary" />
-                  </div>
-              </div>
-              <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">Explore Our AI Toolkit</h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We offer a broad range of AI Tools specific to your needs. Empower your projects with cutting-edge artificial intelligence.
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-               <Button asChild size="lg" className="group">
-                    <Link href="/ai-tools">
-                      Explore AI Tools <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-            </div>
-          </div>
-        </section>
-
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
