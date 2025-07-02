@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/tools", label: "AI Tools", icon: Bot },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -29,6 +30,7 @@ export function Navbar() {
       <span className="ml-2 font-headline text-lg font-semibold">Heidless Hub</span>
       <nav className="ml-auto hidden items-center gap-4 sm:gap-6 lg:flex">
         {navLinks.map((link) => {
+          // This check is a placeholder for potential future auth-only links
           if (link.auth) {
             return (
               <SignedIn key={link.href}>
@@ -89,6 +91,7 @@ export function Navbar() {
             </Link>
             <nav className="grid gap-2">
               {navLinks.map((link) => {
+                 // This check is a placeholder for potential future auth-only links
                 if (link.auth) {
                   return (
                     <SignedIn key={link.href}>
