@@ -15,17 +15,26 @@ const ClientBotInputSchema = z.object({
 });
 export type ClientBotInput = z.infer<typeof ClientBotInputSchema>;
 
-const ClientBotOutputSchema = z.string().describe('The bot\'s response to the client.');
-export type ClientBotOutput = z.infer<typeof ClientBotOutputSchema>;
+// Internal output schema for the flow, ensuring a robust JSON object response from the AI
+const ClientBotFlowOutputSchema = z.object({
+  response: z.string().describe("The bot's response to the client."),
+});
 
+// The final output type that the client-side component expects is a simple string.
+export type ClientBotOutput = string;
+
+// This is the exported function that the client component calls.
+// It orchestrates the call to the internal flow and transforms the data.
 export async function generateBotResponse(message: string): Promise<ClientBotOutput> {
-  return clientCommBotFlow({ message });
+  const result = await clientCommBotFlow({ message });
+  return result.response;
 }
 
 const prompt = ai.definePrompt({
   name: 'clientCommBotPrompt',
   input: {schema: ClientBotInputSchema},
-  output: {schema: ClientBotOutputSchema},
+  // We instruct the model to return an object with a 'response' property.
+  output: {schema: ClientBotFlowOutputSchema},
   prompt: `You are a friendly and professional AI assistant for 'Heidless Hub', a modern web design agency.
 Your role is to answer prospective client questions about the agency's services.
 
@@ -43,14 +52,17 @@ Based on the client's message below, provide a helpful and concise response. Kee
 Client message: {{{message}}}`,
 });
 
+// This is the internal Genkit flow. It is not exported.
 const clientCommBotFlow = ai.defineFlow(
   {
     name: 'clientCommBotFlow',
     inputSchema: ClientBotInputSchema,
-    outputSchema: ClientBotOutputSchema,
+    outputSchema: ClientBotFlowOutputSchema,
   },
   async (input) => {
     const {output} = await prompt(input);
+    // The prompt now returns an object { response: '...' } or null.
+    // The framework will throw if it's null, but asking for a JSON object makes this less likely.
     return output!;
   }
 );
