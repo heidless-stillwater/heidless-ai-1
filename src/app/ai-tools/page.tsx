@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { AIToolSection } from "./components/ai-tool-section";
 import { Briefcase, Utensils, Calculator, Dumbbell, BrainCircuit } from 'lucide-react';
 import { DentalIcon } from "./components/icons";
+import { ExpenseCategorization } from "./components/expense-categorization";
 
 const sections = [
   {
@@ -10,49 +11,64 @@ const sections = [
     title: "Web Consultancy",
     icon: <Briefcase className="h-8 w-8" />,
     tools: [
-      "AI-powered chat",
-      "AI Powered Brief",
-      "AI Expertise",
-      "AI Content Generator",
-      "AI Color Palette Generator",
-      "AI SEO Optimizer",
-      "AI Layout Suggestions",
-      "AI Competitor Analysis",
-      "AI Performance Optimizer",
-      "AI Image Optimizer",
-      "AI Accessibility Checker",
-      "AI Code Generator",
+      { name: "AI-powered chat" },
+      { name: "AI Powered Brief" },
+      { name: "AI Expertise" },
+      { name: "AI Content Generator" },
+      { name: "AI Color Palette Generator" },
+      { name: "AI SEO Optimizer" },
+      { name: "AI Layout Suggestions" },
+      { name: "AI Competitor Analysis" },
+      { name: "AI Performance Optimizer" },
+      { name: "AI Image Optimizer" },
+      { name: "AI Accessibility Checker" },
+      { name: "AI Code Generator" },
     ],
   },
   {
     id: "fast-food-shop",
     title: "Fast Food Shop",
     icon: <Utensils className="h-8 w-8" />,
-    tools: ["AI-powered chat", "AI Recipe Variant Generator"],
+    tools: [
+      { name: "AI-powered chat" },
+      { name: "AI Recipe Variant Generator" },
+    ],
   },
   {
     id: "dental-practice",
     title: "Dental Practice",
     icon: <DentalIcon className="h-8 w-8" />,
-    tools: ["AI-powered chat", "AI Powered Brief"],
+    tools: [
+      { name: "AI-powered chat" },
+      { name: "AI Powered Brief" },
+    ],
   },
     {
     id: "accountancy",
     title: "Accountancy",
     icon: <Calculator className="h-8 w-8" />,
-    tools: ["AI-powered chat", "Expense Categorization"],
+    tools: [
+      { name: "AI-powered chat" },
+      { name: "Expense Categorization", component: <ExpenseCategorization /> },
+    ],
   },
   {
     id: "personal-trainer",
     title: "Personal Trainer",
     icon: <Dumbbell className="h-8 w-8" />,
-    tools: ["AI-powered chat", "AI Powered Brief"],
+    tools: [
+      { name: "AI-powered chat" },
+      { name: "AI Powered Brief" },
+    ],
   },
   {
     id: "life-coach",
     title: "Life Coach",
     icon: <BrainCircuit className="h-8 w-8" />,
-    tools: ["AI-powered chat", "AI Powered Brief"],
+    tools: [
+      { name: "AI-powered chat" },
+      { name: "AI Powered Brief" },
+    ],
   },
 ];
 

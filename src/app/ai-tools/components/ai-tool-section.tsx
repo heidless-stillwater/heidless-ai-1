@@ -5,7 +5,10 @@ type AIToolSectionProps = {
   id: string;
   title: string;
   icon: React.ReactNode;
-  tools: string[];
+  tools: {
+    name: string;
+    component?: React.ReactNode;
+  }[];
 };
 
 export function AIToolSection({ id, title, icon, tools }: AIToolSectionProps) {
@@ -21,21 +24,25 @@ export function AIToolSection({ id, title, icon, tools }: AIToolSectionProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <Tabs defaultValue={slugify(tools[0])} className="w-full">
+          <Tabs defaultValue={slugify(tools[0].name)} className="w-full">
             <TabsList className="flex flex-wrap h-auto justify-start">
               {tools.map((tool) => (
-                <TabsTrigger key={slugify(tool)} value={slugify(tool)}>{tool}</TabsTrigger>
+                <TabsTrigger key={slugify(tool.name)} value={slugify(tool.name)}>{tool.name}</TabsTrigger>
               ))}
             </TabsList>
             <div className="pt-[20px]">
               {tools.map((tool) => (
-                <TabsContent key={slugify(tool)} value={slugify(tool)}>
-                  <div className="p-6 border rounded-lg">
-                    <h3 className="text-xl font-semibold mb-2">{tool}</h3>
-                    <p className="text-muted-foreground">
-                      Placeholder content for the {tool} tool. The interface and functionality for this tool will be implemented here.
-                    </p>
-                  </div>
+                <TabsContent key={slugify(tool.name)} value={slugify(tool.name)}>
+                   {tool.component ? (
+                    tool.component
+                  ) : (
+                    <div className="p-6 border rounded-lg">
+                      <h3 className="text-xl font-semibold mb-2">{tool.name}</h3>
+                      <p className="text-muted-foreground">
+                        Placeholder content for the {tool.name} tool. The interface and functionality for this tool will be implemented here.
+                      </p>
+                    </div>
+                  )}
                 </TabsContent>
               ))}
             </div>
