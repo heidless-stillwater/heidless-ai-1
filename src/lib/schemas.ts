@@ -61,3 +61,15 @@ export const FinancialReportOutputSchema = z.object({
     keyInsights: z.array(z.string()).describe("A list of key insights or observations from the data."),
 });
 export type FinancialReportOutput = z.infer<typeof FinancialReportOutputSchema>;
+
+export const clientQAInputSchema = z.object({
+  question: z.string().min(10, {
+    message: "Question must be at least 10 characters.",
+  }),
+});
+export type ClientQAInput = z.infer<typeof clientQAInputSchema>;
+
+export const clientQAOutputSchema = z.object({
+  answer: z.string().describe("The answer to the client's question."),
+});
+export type ClientQAOutput = z.infer<typeof clientQAOutputSchema>;

@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ExpenseCategorization } from "./accountancy/expense-categorization";
 import { FinancialReports } from "./accountancy/financial-reports";
+import { ClientQA } from "./accountancy/client-qa";
 
 // This component will dynamically render the correct tool.
 // As you build more tools, you'll import them here and add them to the switch statement.
@@ -13,6 +14,9 @@ export function ToolContent({ toolName }: { toolName: string }) {
       break;
     case 'Financial Reports':
       content = <FinancialReports />;
+      break;
+    case 'Client Q&A':
+      content = <ClientQA />;
       break;
     default:
       content = (
