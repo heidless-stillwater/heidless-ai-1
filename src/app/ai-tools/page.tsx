@@ -1,4 +1,6 @@
 import { AiToolsTabs } from "./ai-tools-tabs";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const webConsultancyTools = [
   { id: "chat", name: "AI Chat", description: "Engage with our AI assistant for instant support and answers to your web-related questions.", iconName: "MessageSquare" },
@@ -32,6 +34,28 @@ export default function AiToolsPage() {
           Leverage the power of Artificial Intelligence to streamline your workflow, enhance your creativity, and boost your productivity.
         </p>
       </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 max-w-5xl mx-auto">
+        <Button asChild variant="outline" size="lg" className="w-full">
+            <Link href="#web-consultancy">Web Consultancy</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="w-full">
+            <Link href="#fast-food">Fast Food Shop</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="w-full">
+            <Link href="#dental-practice">Dental Practice</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="w-full">
+            <Link href="#accountancy">Accountancy</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="w-full">
+            <Link href="#personal-trainer">Personal Trainer</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="w-full">
+            <Link href="#life-coach">Life Coach</Link>
+        </Button>
+      </div>
+
 
       <div className="space-y-20">
         <section id="web-consultancy">
