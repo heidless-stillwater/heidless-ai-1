@@ -1,38 +1,43 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Layers, Megaphone, PenTool, ShoppingCart, TrendingUp } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const services = [
+const serviceData = [
   {
-    icon: PenTool,
     title: "Web Design & Development",
     description: "We create visually stunning and highly functional websites tailored to your brand. Our team covers everything from initial UI/UX wireframes to a fully responsive, pixel-perfect website. We specialize in modern frameworks like Next.js for optimal performance."
   },
   {
-    icon: Layers,
     title: "Branding & Identity",
     description: "A strong brand is unforgettable. We'll work with you to develop a compelling brand identity, including logo design, color palettes, typography, and style guides that resonate with your audience and create a lasting impression."
   },
   {
-    icon: TrendingUp,
     title: "SEO & Content Strategy",
     description: "Get discovered by the right audience. Our SEO experts implement cutting-edge strategies to improve your search engine rankings, drive organic traffic, and increase visibility. We also help craft content that engages and converts."
   },
   {
-    icon: ShoppingCart,
     title: "E-commerce Solutions",
     description: "Ready to sell online? We build robust and scalable e-commerce platforms with seamless payment integrations, intuitive product management, and a user-friendly shopping experience to maximize your sales."
   },
   {
-    icon: Code,
     title: "Headless CMS Integration",
     description: "Take control of your content. We integrate powerful headless CMS solutions like Sanity, Contentful, or Strapi, allowing your team to easily manage and update website content without needing a developer."
   },
   {
-    icon: Megaphone,
     title: "Digital Marketing",
     description: "Expand your reach and engage your customers. We create and manage data-driven digital marketing campaigns across various channels, including social media, email marketing, and PPC advertising to grow your business."
   }
-]
+];
+
+const serviceIcons: Record<string, LucideIcon> = {
+  "Web Design & Development": PenTool,
+  "Branding & Identity": Layers,
+  "SEO & Content Strategy": TrendingUp,
+  "E-commerce Solutions": ShoppingCart,
+  "Headless CMS Integration": Code,
+  "Digital Marketing": Megaphone,
+};
+
 
 export default function ServicesPage() {
   return (
@@ -46,19 +51,22 @@ export default function ServicesPage() {
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <Card key={service.title} className="flex flex-col hover:border-primary transition-colors">
-            <CardHeader className="flex flex-row items-center gap-4 pb-4">
-              <div className="bg-primary/10 p-3 rounded-md">
-                <service.icon className="h-6 w-6 text-primary" />
-              </div>
-              <CardTitle className="font-headline">{service.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <CardDescription>{service.description}</CardDescription>
-            </CardContent>
-          </Card>
-        ))}
+        {serviceData.map((service) => {
+          const Icon = serviceIcons[service.title];
+          return (
+            <Card key={service.title} className="flex flex-col hover:border-primary transition-colors">
+              <CardHeader className="flex flex-row items-center gap-4 pb-4">
+                <div className="bg-primary/10 p-3 rounded-md">
+                  {Icon && <Icon className="h-6 w-6 text-primary" />}
+                </div>
+                <CardTitle className="font-headline">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <CardDescription>{service.description}</CardDescription>
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
     </div>
   );
