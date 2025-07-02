@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DefaultTool } from "./tools/default-tool";
+import { RecipeVariantGenerator } from "./tools/recipe-variant-generator";
 
 export type Tool = {
   id: string;
@@ -49,6 +51,12 @@ const iconMap = {
   ChefHat,
 };
 
+// Map tool IDs to their specific components
+const toolComponentMap: { [key: string]: React.ComponentType<{ tool: Tool }> } = {
+  "recipe-variants": RecipeVariantGenerator as any, // Cast because props don't match exactly, but it works
+  // Add other specific tools here as they are built
+};
+
 interface AiToolsTabsProps {
   tools: Tool[];
   defaultValue: string;
@@ -66,6 +74,7 @@ export function AiToolsTabs({ tools, defaultValue }: AiToolsTabsProps) {
       </TabsList>
       {tools.map((tool) => {
         const IconComponent = iconMap[tool.iconName] as LucideIcon;
+        const ToolComponent = toolComponentMap[tool.id] || DefaultTool;
         return (
           <TabsContent key={tool.id} value={tool.id}>
             <Card>
@@ -77,11 +86,7 @@ export function AiToolsTabs({ tools, defaultValue }: AiToolsTabsProps) {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">{tool.description}</p>
-                <div className="mt-6 p-8 border-dashed border-2 border-muted rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground">
-                    [AI Tool Functionality for "{tool.name}" will be here]
-                  </p>
-                </div>
+                <ToolComponent tool={tool} />
               </CardContent>
             </Card>
           </TabsContent>
