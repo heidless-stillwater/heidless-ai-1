@@ -3,6 +3,7 @@
 import { Placeholder } from "./placeholder";
 import { ExpenseCategorization } from "./accountancy/expense-categorization";
 import { InventoryManagement } from "./fast-food/inventory-management";
+import { WasteReductionManagement } from "./fast-food/waste-reduction-management";
 
 interface ToolHubProps {
   tool: string;
@@ -16,6 +17,10 @@ export function ToolHub({ tool, section }: ToolHubProps) {
   
   if (section === "fast-food" && tool === "Inventory Management") {
     return <InventoryManagement />;
+  }
+  
+  if (section === "fast-food" && tool === "Waste Reduction Management") {
+    return <WasteReductionManagement />;
   }
 
   // Add other tools here as they are built

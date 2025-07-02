@@ -49,3 +49,22 @@ export const inventoryManagementOutputSchema = z.object({
     overstockedItems: z.array(inventoryItemSchema).describe("A list of items that are overstocked and may require promotional efforts."),
 });
 export type InventoryManagementOutput = z.infer<typeof inventoryManagementOutputSchema>;
+
+
+export const wasteReductionInputSchema = z.object({
+  processedInventoryData: z.string().describe("A string listing perishable items and their days until expiration."),
+});
+export type WasteReductionInput = z.infer<typeof wasteReductionInputSchema>;
+
+const urgentItemSchema = z.object({
+    name: z.string().describe("The name of the item nearing expiration."),
+    daysRemaining: z.number().describe("The number of days left until the item expires."),
+    suggestion: z.string().describe("A creative suggestion for using the item."),
+    reasoning: z.string().describe("The reasoning behind the suggestion."),
+});
+
+export const wasteReductionOutputSchema = z.object({
+    urgentItems: z.array(urgentItemSchema).describe("A list of items that require immediate attention."),
+    proactiveStrategies: z.array(z.string()).describe("A list of general, long-term strategies to reduce waste."),
+});
+export type WasteReductionOutput = z.infer<typeof wasteReductionOutputSchema>;
